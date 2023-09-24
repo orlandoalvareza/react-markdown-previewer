@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
 import { faDownLeftAndUpRightToCenter } from '@fortawesome/free-solid-svg-icons';
 
+import defaultText from './defaultText';
 import './index.css';
 
 function App() {
-  const [text, setText] = useState('');
+  const [text, setText] = useState(defaultText);
   const [isEditorVisible, setIsEditorVisible] = useState(true);
   const [isPreviewVisible, setIsPreviewVisible] = useState(true);
 
