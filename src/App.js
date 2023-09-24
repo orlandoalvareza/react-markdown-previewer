@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 import './index.css';
 
@@ -35,7 +36,9 @@ function App() {
           <h2 className="window-name">Previewer</h2>
           <button className="window-action" onClick={previewWindowSizeHandler}>Button</button>
         </div>
-        <div id="preview"></div>
+        <div id="preview">
+          <ReactMarkdown>{text}</ReactMarkdown>
+        </div>
       </div>
     </div>
   );
