@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
+import { faDownLeftAndUpRightToCenter } from '@fortawesome/free-solid-svg-icons';
 
 import './index.css';
 
@@ -27,14 +30,32 @@ function App() {
       <div className='editor-container'>
         <div className="tool-bar">
           <h2 className="window-name">Editor</h2>
-          <button className="window-action" onClick={editorWindowSizeHandler}>Button</button>
+          <button className="window-action" onClick={editorWindowSizeHandler}>
+            <FontAwesomeIcon
+              style={{ fontSize: '1.1rem', width: '30px' }}
+              icon={
+                isEditorVisible === isPreviewVisible
+                  ? faUpRightAndDownLeftFromCenter
+                  : faDownLeftAndUpRightToCenter
+              }
+            />
+          </button>
         </div>
         <textarea id="editor" onChange={textChangeHandler}>{text}</textarea>
       </div>
       <div className='preview-container'>
         <div className="tool-bar">
           <h2 className="window-name">Previewer</h2>
-          <button className="window-action" onClick={previewWindowSizeHandler}>Button</button>
+          <button className="window-action" onClick={previewWindowSizeHandler}>
+            <FontAwesomeIcon
+              style={{ fontSize: '1.1rem', width: '30px' }}
+              icon={
+                isEditorVisible === isPreviewVisible
+                  ? faUpRightAndDownLeftFromCenter
+                  : faDownLeftAndUpRightToCenter
+              }
+            />
+          </button>
         </div>
         <div id="preview">
           <ReactMarkdown>{text}</ReactMarkdown>
