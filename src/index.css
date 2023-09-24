@@ -1,0 +1,127 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+code {
+  display: block;
+  background: #f4f7f7;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+a {
+  color: #79a8a9;
+}
+
+a:hover {
+  text-decoration: underline;
+  transition: 0.2s;
+}
+
+.App {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(310deg, #79a8a9, #aacfd0);
+  padding: 100px 120px 200px;
+}
+
+.editor-container {
+  flex: 1 1 75%;
+}
+
+.preview-container {
+  flex: 1 1 100%;
+}
+
+.tool-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1f4e5f;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 20px;
+}
+
+#editor,
+#preview {
+  font-family: system-ui, sans-serif;
+  font-size: 1.3rem;
+  color: #1f4e5f;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0 0 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  padding: 20px;
+}
+
+#editor {
+  padding: 0 10px;
+}
+
+#preview {
+  padding: 20px 30px;
+  overflow: hidden auto;
+}
+
+#preview > * + * {
+  margin-top: 1rem;
+}
+
+.window-name,
+.window-action {
+  font-family: 'Segoe-Ui', Arial, sans-serif;
+  color: #f4f7f7;
+}
+
+.window-action {
+  color: #79a8a9;
+  background: transparent;
+  padding: 3px;
+  border: none;
+  cursor: pointer;
+}
+
+.window-action:hover {
+  color: #aacfd0;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+img[alt='React'] {
+  width: 500px;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .editor-container,
+  .preview-container {
+    flex: 1 0 50%;
+    height: inherit;
+  }
+
+  #editor {
+    height: 40vh;
+    min-height: 30vh;
+  }
+}

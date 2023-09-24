@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='editor-container'>
+      <div className={isEditorVisible ? 'editor-container' : 'hidden'}>
         <div className="tool-bar">
           <h2 className="window-name">Editor</h2>
           <button className="window-action" onClick={editorWindowSizeHandler}>
@@ -43,7 +43,7 @@ function App() {
         </div>
         <textarea id="editor" onChange={textChangeHandler}>{text}</textarea>
       </div>
-      <div className='preview-container'>
+      <div className={isPreviewVisible ? 'preview-container' : 'hidden'}>
         <div className="tool-bar">
           <h2 className="window-name">Previewer</h2>
           <button className="window-action" onClick={previewWindowSizeHandler}>
